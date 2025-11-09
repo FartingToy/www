@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FartingToy.com - Hilariously Funny Prank Toys & Gag Gifts 💨</title>
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-4VCV36GM5K"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+     
+      gtag('config', 'G-4VCV36GM5K');
+    </script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #00ff88;
+            --secondary: #ff00ff;
+            --accent: #00ffff;
+            --dark: #0a0a1a;
+            --darker: #050510;
+            --light: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+            color: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Animated Background */
+        .background-animation {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            overflow: hidden;
+        }
+
+        .bubble {
+            position: absolute;
+            bottom: -100px;
+            background: radial-gradient(circle, rgba(0, 255, 136, 0.1) 0%, rgba(255, 0, 255, 0.05) 100%);
+            border-radius: 50%;
+            animation: float 15s infinite ease-in-out;
+            opacity: 0.3;
+        }
+
+        .bubble:nth-child(1) { left: 10%; width: 80px; height: 80px; animation-delay: 0s; }
+        .bubble:nth-child(2) { left: 25%; width: 120px; height: 120px; animation-delay: 2s; }
+        .bubble:nth-child(3) { left: 45%; width: 100px; height: 100px; animation-delay: 4s; }
+        .bubble:nth-child(4) { left: 65%; width: 90px; height: 90px; animation-delay: 1s; }
+        .bubble:nth-child(5) { left: 80%; width: 110px; height: 110px; animation-delay: 3s; }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0; }
+            50% { opacity: 0.3; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Header */
+        header {
+            padding: 2rem;
+            text-align: center;
+            background: rgba(10, 10, 26, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 2px solid var(--primary);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            animation: slideDown 0.6s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { transform: translateY(-100%); }
+            to { transform: translateY(0); }
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 30px rgba(0, 255, 136, 0.5);
+        }
+
+        @keyframes gradient {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .tagline {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            color: var(--accent);
+            margin-top: 0.5rem;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 4rem 2rem;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .hero h2 {
+            font-size: clamp(1.5rem, 3vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto 3rem;
+            line-height: 1.6;
+            animation: fadeInUp 1s ease-out 0.2s backwards;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Image Gallery */
+        .image-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 4rem;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 255, 136, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .gallery-item:nth-child(2) { animation-delay: 0.2s; }
+        .gallery-item:nth-child(3) { animation-delay: 0.4s; }
+
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 60px rgba(255, 0, 255, 0.4);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+            padding: 1.5rem;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
+        }
+
+        /* Products Section */
+        .products-section {
+            padding: 4rem 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        .brand-section {
+            margin-bottom: 5rem;
+        }
+
+        .brand-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1.5rem 2rem;
+            background: linear-gradient(135deg, rgba(0, 255, 136, 0.1), rgba(255, 0, 255, 0.1));
+            border-radius: 15px;
+            border: 2px solid var(--primary);
+            margin-bottom: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .brand-header h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            color: var(--accent);
+        }
+
+        .brand-link {
+            padding: 0.8rem 1.5rem;
+            background: var(--primary);
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 255, 136, 0.3);
+        }
+
+        .brand-link:hover {
+            background: var(--secondary);
+            transform: scale(1.05);
+            box-shadow: 0 8px 25px rgba(255, 0, 255, 0.5);
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .product-card {
+            background: rgba(20, 20, 40, 0.6);
+            border-radius: 20px;
+            padding: 1.5rem;
+            border: 2px solid rgba(0, 255, 136, 0.2);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .product-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .product-card:hover::before {
+            left: 100%;
+        }
+
+        .product-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 255, 136, 0.3);
+        }
+
+        .product-icon {
+            font-size: 4rem;
+            text-align: center;
+            margin-bottom: 1rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .product-card h4 {
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            min-height: 60px;
+            line-height: 1.3;
+        }
+
+        .buy-button {
+            display: block;
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: var(--dark);
+            text-decoration: none;
+            text-align: center;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-top: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(0, 255, 136, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .buy-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 0.5);
+            background: linear-gradient(135deg, var(--secondary), var(--accent));
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 3rem 2rem;
+            background: rgba(5, 5, 16, 0.9);
+            border-top: 2px solid var(--primary);
+            margin-top: 4rem;
+        }
+
+        footer p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 1rem;
+        }
+
+        .emoji-rain {
+            font-size: 2rem;
+            animation: float 4s infinite ease-in-out;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .brand-header {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .image-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Loading Animation */
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--primary);
+            animation: spin 1s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-animation">
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+        <div class="bubble"></div>
+    </div>
+
+    <header>
+        <h1>💨 FARTINGTOY.COM 💨</h1>
+        <p class="tagline">The Ultimate Destination for Hilarious Prank Toys!</p>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h2>Get Ready to Laugh Until You Cry! 😂</h2>
+            <p>Welcome to the most ridiculously funny collection of prank toys and gag gifts on the internet! Whether you're looking to pull the ultimate office prank, bring joy to a party, or just need a good laugh, we've got you covered. Our carefully curated selection features only the best, most realistic, and funniest prank toys that will have everyone in stitches!</p>
+        </section>
+
+        <section class="image-gallery">
+            <div class="gallery-item">
+                <img src="84a0b019-93f1-4e36-ba01-ea65f6d1f4e9.jpeg" alt="People laughing hysterically">
+                <div class="gallery-overlay">
+                    <h3>Pure Joy & Laughter! 🤣</h3>
+                </div>
+            </div>
+            <div class="gallery-item">
+                <img src="abf77e6c-79e6-42d6-abb0-b0fbdf9f7a95.jpeg" alt="Friends having fun with pranks">
+                <div class="gallery-overlay">
+                    <h3>Epic Prank Moments! 😄</h3>
+                </div>
+            </div>
+        </section>
+
+        <section class="products-section">
+            <div class="section-header">
+                <h2>🎭 Featured Products 🎭</h2>
+            </div>
+
+            <!-- Laughing Smith Brand -->
+            <div class="brand-section">
+                <div class="brand-header">
+                    <h3>⭐ Laughing Smith Collection ⭐</h3>
+                    <a href="https://amzn.to/4nLruXU" class="brand-link" target="_blank">Visit Store →</a>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">💩💨</div>
+                        <h4>Wet Farts - Potent Stink Spray</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Extra Strong Stink - Hilarious Gag Gifts & Pranks for Adults or Kids - Non Toxic - Smells Like Really 'Bad' Gas!</p>
+                        <a href="https://amzn.to/43RTeDa" class="buy-button" target="_blank">🛒 Buy Now on Amazon</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">🎈💨</div>
+                        <h4>Mega 8-inch Whoopee Cushion</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Giant Fart Sound Prank Toy for Kids - Perfect Joke or Gag Gift, Funniest Fart Game - Durable Woopy Cushion for Parties!</p>
+                        <a href="https://amzn.to/3JV8t7D" class="buy-button" target="_blank">🛒 Buy Now on Amazon</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">🚬✨</div>
+                        <h4>Fake Cigarettes (Pack of 6)</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Realistic Movie, Stage & Costume Theatre Props - Harmless Fake Cigs for Dress Up, Halloween, Gangster or White Trash Party!</p>
+                        <a href="https://amzn.to/4p4vZxX" class="buy-button" target="_blank">🛒 Buy Now on Amazon</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">💰🎫</div>
+                        <h4>Prank Lottery Tickets & Scratch Cards</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Look Real - $1 Million Winning Ticket Gag Set - Watch Their Faces Go From Excitement to Confusion!</p>
+                        <a href="https://amzn.to/4oPZrIx" class="buy-button" target="_blank">🛒 Buy Now on Amazon</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Premium Products -->
+            <div class="brand-section">
+                <div class="brand-header">
+                    <h3>🔥 Premium Prank Collection 🔥</h3>
+                </div>
+                <div class="products-grid">
+                    <div class="product-card">
+                        <div class="product-icon">📻💨</div>
+                        <h4>Fart Machine #2 with Boom Box Technology</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">The Original Remote Controlled Fart Machine - 15 Realistic Sounds - Wireless with 100 ft Range - Perfect for Epic Pranks!</p>
+                        <a href="https://amzn.to/4ovNlUu" class="buy-button" target="_blank">🛒 Buy Now on Amazon</a>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-icon">🔴💨</div>
+                        <h4>Talkie Toys Fart Button</h4>
+                        <p style="color: rgba(255,255,255,0.7); margin-bottom: 1rem;">Lights Up and Plays 20 Funny Fart Sounds - Hilarious Talking Toy for Fart Games, Office Humor & Stress Relief!</p>
+                        <a href="https://amzn.to/4otWwER" class="buy-button" target="_blank">🛒 Buy Now on Amazon</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="hero">
+            <h2>Why Choose FartingToy.com? 🎯</h2>
+            <p>We handpick only the funniest, highest-quality prank toys from trusted brands. Every product is carefully selected to ensure maximum laughter and entertainment. Whether you're a seasoned prankster or just looking for a good laugh, our collection has something for everyone. All products ship fast via Amazon Prime, and we stand behind every recommendation!</p>
+            <div style="margin-top: 2rem;">
+                <span class="emoji-rain">💨</span>
+                <span class="emoji-rain">😂</span>
+                <span class="emoji-rain">🎉</span>
+                <span class="emoji-rain">💩</span>
+                <span class="emoji-rain">🤣</span>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p style="font-size: 1.2rem; color: var(--primary); margin-bottom: 1.5rem;">
+            <strong>FartingToy.com</strong> - Making the World Laugh Since 2025
+        </p>
+        <p>Premium Prank Toys & Hilarious Gag Gifts</p>
+        <p style="margin-top: 1rem; font-size: 0.9rem;">
+            As an Amazon Associate, we earn from qualifying purchases. Prices and availability are subject to change.
+        </p>
+        <p style="margin-top: 2rem; color: var(--accent);">
+            💨 Spread the Laughter! Share with Friends! 💨
+        </p>
+    </footer>
+
+    <script>
+        // Google Analytics Event Tracking
+        function trackProductClick(productName, productUrl, category) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'product_click', {
+                    'event_category': 'Products',
+                    'event_label': productName,
+                    'product_category': category,
+                    'product_url': productUrl,
+                    'value': 1
+                });
+                console.log('Tracked product click:', productName);
+            }
+        }
+
+        function trackBrandStoreClick(brandName, storeUrl) {
+            if (typeof gtag !== 'undefined') {
+                gtag('event', 'brand_store_visit', {
+                    'event_category': 'Brand Stores',
+                    'event_label': brandName,
+                    'store_url': storeUrl,
+                    'value': 1
+                });
+                console.log('Tracked brand store visit:', brandName);
+            }
+        }
+
+        // Track all product buy button clicks
+        document.addEventListener('DOMContentLoaded', function() {
+            // Track Laughing Smith products
+            const laughingSmithProducts = [
+                { selector: 'a[href="https://amzn.to/43RTeDa"]', name: 'Wet Farts Potent Stink Spray', category: 'Laughing Smith' },
+                { selector: 'a[href="https://amzn.to/3JV8t7D"]', name: 'Mega 8-inch Whoopee Cushion', category: 'Laughing Smith' },
+                { selector: 'a[href="https://amzn.to/4p4vZxX"]', name: 'Fake Cigarettes Pack of 6', category: 'Laughing Smith' },
+                { selector: 'a[href="https://amzn.to/4oPZrIx"]', name: 'Prank Lottery Tickets', category: 'Laughing Smith' }
+            ];
+
+            // Track Premium Collection products
+            const premiumProducts = [
+                { selector: 'a[href="https://amzn.to/4ovNlUu"]', name: 'Fart Machine #2 with Boom Box', category: 'Premium Collection' },
+                { selector: 'a[href="https://amzn.to/4otWwER"]', name: 'Talkie Toys Fart Button', category: 'Premium Collection' }
+            ];
+
+            // Add click tracking to all product buttons
+            [...laughingSmithProducts, ...premiumProducts].forEach(product => {
+                const element = document.querySelector(product.selector);
+                if (element) {
+                    element.addEventListener('click', function() {
+                        trackProductClick(product.name, this.href, product.category);
+                    });
+                }
+            });
+
+            // Track brand store links
+            const brandStores = [
+                { selector: 'a[href="https://amzn.to/4nLruXU"]', name: 'Laughing Smith Store' }
+            ];
+
+            brandStores.forEach(store => {
+                const element = document.querySelector(store.selector);
+                if (element) {
+                    element.addEventListener('click', function() {
+                        trackBrandStoreClick(store.name, this.href);
+                    });
+                }
+            });
+        });
+
+        // Add smooth scroll behavior
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.product-card, .gallery-item').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+
+        // Track page view
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'page_view', {
+                'page_title': 'FartingToy.com - Home',
+                'page_location': window.location.href
+            });
+        }
+
+        // Fun console message
+        console.log('%c💨 Welcome to FartingToy.com! 💨', 'font-size: 24px; color: #00ff88; font-weight: bold;');
+        console.log('%cGet ready for some serious laughs! 😂', 'font-size: 16px; color: #ff00ff;');
+        console.log('%c📊 Google Analytics tracking active!', 'font-size: 14px; color: #00ffff;');
+    </script>
+</body>
+</html>
